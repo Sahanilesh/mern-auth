@@ -1,10 +1,9 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import userModel from '../models/user.model.js';
-import { use } from 'react';
 
 export const register = async (req, res) => {
-    const {name, email, password} = req.body;
+    const {name, email, password} = req.body
 
     if(!name || !email || !password){
         return res.json({
@@ -47,13 +46,15 @@ export const register = async (req, res) => {
             success: false,
             message: error.message
         })
+        console.log(error);
+        
     }
 }
 
 
 
 export const login = async (req, res) =>{
-    const {email, password} = req.bosdy;
+    const {email, password} = req.body;
 
     if (!email || !password) {
         return res.json({

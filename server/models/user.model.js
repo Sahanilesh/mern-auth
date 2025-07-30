@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { use } from "react";
 
 const userSchema = new mongoose.Schema({
     name: {type: String, required : true},
@@ -10,8 +9,8 @@ const userSchema = new mongoose.Schema({
     isAccountVerified: {type: Boolean, default: false},
     resetOtp: {type: String, default: ''},
     resetOtpExpireAt: {type: Number, default: 0},
-},{timestamps:true});
+});
 
-const userModel = mongoose.models.users || mongoose.model('user', userSchema )
+const userModel = mongoose.model('users', userSchema )
 
 export default userModel;
