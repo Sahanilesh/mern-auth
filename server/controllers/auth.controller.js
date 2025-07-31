@@ -211,3 +211,18 @@ export const verifyEmail = async (req, res) => {
         })
     }
 }
+
+// user is already login
+export const isAuthenticated = async (req, res) =>{
+    try {
+        return res.json({success:true})
+    } catch (error) {
+        res.json({
+            success: true,
+            message: error.message
+        });
+    }
+}
+
+// Send password reset otp
+
